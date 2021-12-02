@@ -21,7 +21,7 @@ def new_case_id():                                               #this is for sy
 
     """
     return uuid.uuid4().hex
-def run():
+def run(req):
     """Runs the main application."""
     
     auth_string = '43446992:fc94728c49d650cf38434eed81706d17'
@@ -29,7 +29,7 @@ def run():
 
     # Read patient's age and sex; required by /diagnosis endpoint.
     # Alternatively, this could be done after learning patient's complaints
-    age, sex = conversation.read_age_sex()
+    age, sex = conversation.read_age_sex(req)
     print(f"Ok, {age} year old {sex}.")
     age = {'value':  age, 'unit': 'year'}
 
@@ -89,9 +89,9 @@ print("""Hello, Health buddy here. I am your personal health assistant. I will g
     about hospital type "no"(type 'quit' to exit the chat)""")
 
 
-def get_response(msg):
+def get_response(msg,req):
     if msg == "yes":
-        run()
+        run(req)
         return 'hello'
     sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)

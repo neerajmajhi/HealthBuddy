@@ -27,7 +27,7 @@ def read_input(prompt):
     return sys.stdin.readline().strip()
 
 
-def read_age_sex():
+def read_age_sex(req):
     """Reads age and sex specification such as "30 male".
 
     This is very crude. This is because reading answers to simple questions is
@@ -40,7 +40,7 @@ def read_age_sex():
     Returns:
         int, str: Age and sex.
 
-    """
+   
     answer = read_input("Patient age and sex (e.g., 30 male)")
     try:
         age = int(extract_age(answer))
@@ -53,6 +53,8 @@ def read_age_sex():
         print("{} Please repeat.".format(e))
         return read_age_sex()
     return age, sex
+     """
+    return req.get_json().get("age"), req.get_json().get("sex")
 
 
 def read_complaint_portion(age, sex, auth_string, case_id, context, language_model=None):

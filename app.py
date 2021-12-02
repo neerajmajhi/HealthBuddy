@@ -11,7 +11,7 @@ app = Flask(__name__)
 def predict():
     text = request.get_json().get("message")
     #TODO: check the text validity
-    response = get_response(text)
+    response = get_response(text,request)
     message = {"answer": response}
     return jsonify(message)
 

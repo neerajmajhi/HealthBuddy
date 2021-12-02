@@ -1,0 +1,75 @@
+C:\Users\neera\Desktop\Infermedica\dual model integration>python all_chat.py
+Hello, Samantha here. I am your personal health assistant. I will guide you further in your hospital query.
+    Before moving forward, If you are feeling unwell or having any sympotms.
+    would you like to try our symptom checker. please type "yes" to check diagnose yourself or to know more
+    about hospital type "no"(type 'quit' to exit the chat)
+You: yes
+yes
+Patient age and sex (e.g., 30 male): 20 male
+Ok, 20 year old male.
+Describe you complaints: I am having headache and body pain
+Noting: +Body aches, +Headache
+Describe you complaints:
+Do your bones hurt? yes
+Do any of your joints hurt? no
+Are the headaches severe? yes
+Are you fully vaccinated against COVID-19? yes
+Is your neck twisted, and does it hurt when you try to straighten it? no
+Is your nose or throat itchy or tingly? nope
+Have you been experiencing these headaches for more than 3 months? no
+Do you have a runny nose? yes
+Is the nasal discharge white or clear? yes
+Do you have a sore throat? nope
+Have you been sneezing? yes
+Do you have sneezing attacks? nope
+Are any lymph nodes enlarged, e.g., in the neck, behind the ears, under the arms, or anywhere else? nah
+Do your eyes look glassy, shiny, or glassed over? nope
+Is the nasal discharge green or yellow? no
+Is either eye tearing up more than usual? n
+Are you unable to smell properly? yes
+Does bending yourself or your head down worsen the headache? yes
+Do you have a stuffy nose? no
+Is the headache located towards the front of your head? yes
+
+Patient complaints:
+
+Patient answers:
+ 1. +Body aches
+ 2. +Headache
+ 3. +Bone pain
+ 4. -Joint pain
+ 5. +Headache, severe
+ 6. +Full COVID-19 vaccination
+ 7. -Twisted neck
+ 8. -Itching nose or throat
+ 9. -Headache, chronic
+10. +Nasal catarrh
+11. +Nasal catarrh, mucoid
+12. -Pharyngeal pain
+13. +Sneezing
+14. -Sneezing attacks
+15. -Enlarged lymph nodes
+16. -Glassy eyes
+17. -Nasal catarrh, purulent
+18. -Excessive tear production
+19. +Impaired smell
+20. +Headache, exacerbated by tilting head forwards
+21. -Nasal congestion
+22. +Headache, forehead
+
+Diagnoses:
+ 1. 0.56 Acute viral rhinosinusitis
+ 2. 0.13 Acute bacterial rhinosinusitis
+ 3. 0.08 Nasal polyps
+ 4. 0.08 COVID-19
+
+Triage level: consultation
+Teleconsultation applicable: True
+
+Samantha: I do not understand...
+You: i did symptom checker
+Samantha: Glad that I can help
+You: goodbye
+Samantha: Bye! Come back again soon.
+You: quit
+quit

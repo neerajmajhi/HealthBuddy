@@ -59,6 +59,8 @@ def run(req):
     conversation.summarise_all_evidence(evidence)
     conversation.summarise_diagnoses(diagnoses)
     conversation.summarise_triage(triage)
+    response = {"Status": true, "age": age, "sex" : sex, "naming" : naming, "mentions" : mentions}
+    return response
 
 
 
@@ -91,8 +93,8 @@ print("""Hello, Health buddy here. I am your personal health assistant. I will g
 
 def get_response(msg,req):
     if msg == "yes":
-        run(req)
-        return 'hello'
+        a = run(req)
+        return a
     sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])

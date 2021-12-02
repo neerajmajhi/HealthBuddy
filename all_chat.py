@@ -39,7 +39,7 @@ def run(req):
     naming = apiaccess.get_observation_names(age, auth_string, case_id, language_model='infermedica-en')
 
     # Read patient's complaints by using /parse endpoint.
-    mentions = conversation.read_complaints(age, sex, auth_string, case_id, language_model='infermedica-en',req)
+    mentions = conversation.read_complaints(age, sex, auth_string, case_id, req, language_model='infermedica-en')
 
     # Keep asking diagnostic questions until stop condition is met (all of this
     # by calling /diagnosis endpoint) and get the diagnostic ranking and triage

@@ -57,7 +57,7 @@ def read_age_sex(req):
     return req.get_json().get("age"), req.get_json().get("sex")
 
 
-def read_complaint_portion(age, sex, auth_string, case_id, context, language_model=None,req):
+def read_complaint_portion(age, sex, auth_string, case_id, context, req, language_model=None):
     """Reads user input and calls the /parse endpoint of Infermedica API to
     extract conditions found in text.
 
@@ -109,7 +109,7 @@ def summarise_mentions(mentions):
     print("Noting: {}".format(", ".join(mention_as_text(m) for m in mentions)))
 
 
-def read_complaints(age, sex, auth_string, case_id, language_model=None,req):
+def read_complaints(age, sex, auth_string, case_id, req, language_model=None):
     """Keeps reading complaint-describing messages from user until empty
     message is read (or just read the story if given). Will call the /parse
     endpoint and return mentions captured there.
@@ -128,8 +128,8 @@ def read_complaints(age, sex, auth_string, case_id, language_model=None,req):
     mentions = []
     context = []  # List of ids of present symptoms in the order of reporting.
     while True:
-        portion = read_complaint_portion(age, sex, auth_string, case_id, context,
-                                         language_model=language_model,req)
+        portion = read_complaint_portion(age, sex, auth_string, case_id, context, req,
+                                         language_model=language_model)
         if portion:
             summarise_mentions(portion)
             mentions.extend(portion)
